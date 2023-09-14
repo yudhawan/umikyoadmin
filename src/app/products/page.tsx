@@ -1,8 +1,8 @@
 import React from 'react'
-
+import styles from './products.module.scss'
 function ProductsPage() {
     return (
-        <div>ProductsPage</div>
+        <main className={styles.main}>ProductsPage</main>
     )
 }
 

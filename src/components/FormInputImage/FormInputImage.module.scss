@@ -1,0 +1,43 @@
+@import '../../constants.module.scss';
+
+.main{
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 100%;
+    @media only screen and (max-width: $tablet) {
+        gap: 24px;
+        margin-top: 36px;
+    }
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+}
+.inputContainer{
+    display: flex;
+    gap: 24px;
+}
+.addimage{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.submit{
+    background-color: greenyellow;
+    color: $black;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+.optionContainer{
+    width: 100px;
+    text-transform: uppercase;
+}

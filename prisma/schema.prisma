@@ -15,7 +15,7 @@ model Users {
   nama_lengkap   String
   nama           String
   email          String
-  ttl            DateTime
+  ttl            String
   wa             String
   ig             String?
   fb             String?
@@ -39,6 +39,62 @@ model Points {
   userId  String @db.ObjectId
   saldo   String
   history String
+}
+
+model Products {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  product_name String
+  quantity     Int
+  price        Int
+  category     String
+  sub          String
+  images       String?
+  description  String
+}
+
+model Categories {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  category String
+}
+
+model Banners {
+  id        String           @id @default(auto()) @map("_id") @db.ObjectId
+  image     String
+  dir       String
+  attribute AttributBanner[]
+}
+
+model AttributBanner {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String?
+  alt      String?
+  link     String?
+  position String?
+  text     String?
+  bg       String?
+  banner   Banners @relation(fields: [bannerId], references: [id])
+  bannerId String  @db.ObjectId
+}
+
+model Orders {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  invoice     String
+  name        String
+  wa          String
+  alamat      String
+  products    String
+  order_time  DateTime
+  status      String
+  total       Int
+  ongkir      Int?
+  note        String?
+  file_upload String?
+  resi        String?
+}
+
+model Testimonies {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+  img String
 }
 
 model ModelData {

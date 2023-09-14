@@ -7,8 +7,7 @@ export type BodyProp = {
 export const POST = async (request: NextRequest) => {
     try {
         const body = await request.json()
-        const newPost = await prisma.modelData.create({ data: body })
-        return NextResponse.json(newPost)
+        return NextResponse.json('sukses')
     } catch (error) {
         console.log(error)
         return NextResponse.json({ message: "POST error: ", error }, { status: 500 })

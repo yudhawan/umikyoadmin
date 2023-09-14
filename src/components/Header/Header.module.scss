@@ -1,0 +1,32 @@
+@import '../../constants.module.scss';
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 20dvw;
+    height: 100%;
+    justify-content: center;
+    align-items: baseline;
+    background-color: $pink-2;
+    position: fixed;
+    @media only screen and (max-width: $tablet) {
+        display: none;
+    }
+}
+.list{
+    margin-left: 20px;
+    text-decoration: none;
+    color: $black-2;
+    font-size: 30px;
+    font-weight: 600;
+    width: fit-content;
+}
+.list:hover{
+    color: $grey-1;
+    box-shadow: 0 4px 2px -2px rgba(9, 9, 9, 1);
+}
+.active{
+    color: $grey-1;
+    box-shadow: 0 4px 2px -2px rgba(9, 9, 9, 1);
+}
