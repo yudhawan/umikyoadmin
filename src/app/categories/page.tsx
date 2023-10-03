@@ -1,7 +1,7 @@
-import FormInputCategories from '@/components/FormInputCategories/FormInputCategories'
-import styles from './categories.module.scss'
-import CategoryTag from '@/components/CategoryTag/CategoryTag'
 import { revalidateTag } from 'next/cache'
+import FormInputCategories from '@/components/FormInputCategories/FormInputCategories'
+import CategoryTag from '@/components/CategoryTag/CategoryTag'
+import styles from './categories.module.scss'
 
 async function getCategoriesAndSub() {
     const res = await fetch(process.env.BASE_URL + '/api/getCategories', { next: { tags: ["deleteCategory", "postCategory"] } })
@@ -9,20 +9,20 @@ async function getCategoriesAndSub() {
     return res.json()
 }
 async function deleteCategories(id: string, type: string) {
-    'use server'
-    const res = await fetch(process.env.BASE_URL + '/api/deleteCategory', {
-        method: 'post',
-        body: JSON.stringify({ id, type })
-    })
-    revalidateTag('deleteCategory')
+    // 'use server'
+    // const res = await fetch(process.env.BASE_URL + '/api/deleteCategory', {
+    //     method: 'post',
+    //     body: JSON.stringify({ id, type })
+    // })
+    // revalidateTag('deleteCategory')
 }
 const addCategoryAndSub = async ({ category, sub }: { category: string, sub: string }) => {
-    'use server'
-    const res = await fetch(process.env.BASE_URL + '/api/addCategory', {
-        method: 'post',
-        body: JSON.stringify({ category, sub }),
-    })
-    revalidateTag('postCategory')
+    // 'use server'
+    // const res = await fetch(process.env.BASE_URL + '/api/addCategory', {
+    //     method: 'post',
+    //     body: JSON.stringify({ category, sub }),
+    // })
+    // revalidateTag('postCategory')
 }
 export async function Categories() {
     const data = await getCategoriesAndSub()
