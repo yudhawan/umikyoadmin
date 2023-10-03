@@ -1,6 +1,5 @@
-
-import FormInputImage from './components/FormInputImage/FormInputImage'
-import ImageSlideContainer from './components/ImageSlideContainer/ImageSlideContainer'
+import FormInputImage from '@/components/FormInputImage/FormInputImage'
+import ImageSlideContainer from '@/components/ImageSlideContainer/ImageSlideContainer'
 import styles from './page.module.scss'
 
 async function getImage(page: string) {

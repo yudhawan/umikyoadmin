@@ -2,10 +2,11 @@ import React from 'react'
 import { revalidateTag } from 'next/cache'
 import Image from 'next/image'
 import TrashIcon from '../../icons/trash.svg'
+import FormInputProducts from '@/components/FormInputProducts/FormInputProducts'
 import { ProductProp } from '@/type'
+import IconComponent from '@/components/Icon/Icon'
 import styles from './products.module.scss'
-import FormInputProducts from '../components/FormInputProducts/FormInputProducts'
-import ProductPreview from '../components/ProductPreview/ProductPreview'
+import ProductPreview from '@/components/ProductPreview/ProductPreview'
 async function getCategoriesAndSub() {
     const res = await fetch(process.env.BASE_URL + '/api/getCategories', { next: { tags: ["deleteCategory", "postCategory"] } })
     if (!res.ok) return []

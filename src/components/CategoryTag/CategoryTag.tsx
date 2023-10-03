@@ -1,6 +1,6 @@
 'use client'
 import IconComponent from '../Icon/Icon'
-import XIcon from '../../../icons/x.svg'
+import XIcon from '../../icons/x.svg'
 import styles from './CategoryTag.module.scss'
 function CategoryTag({ id, category, type, deleteFn }: { id: string, category: string, type?: string, deleteFn?: (id: string, type: string) => Promise<void> }) {
     return (

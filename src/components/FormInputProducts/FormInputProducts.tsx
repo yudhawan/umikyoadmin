@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import ImgIcon from '../../../icons/image.svg'
+import ImgIcon from '../../icons/image.svg'
 import styles from './FormInputProducts.module.scss'
 import { CategoriesProp, ProductProp, SubProp } from '@/type'
 import IconComponent from '../Icon/Icon'

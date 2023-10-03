@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './sellers.module.scss'
 import { SellerType } from '@/type'
-import SellersTable from '../components/SellersTable/SellersTable'
-import Pagination from '../components/Pagination/Pagination'
+import SellersTable from '@/components/SellersTable/SellersTable'
+import Pagination from '@/components/Pagination/Pagination'
 type GetSellerProp = {
     search?: string,
     page: number

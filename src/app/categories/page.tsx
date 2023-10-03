@@ -1,7 +1,7 @@
 import { revalidateTag } from 'next/cache'
+import FormInputCategories from '@/components/FormInputCategories/FormInputCategories'
+import CategoryTag from '@/components/CategoryTag/CategoryTag'
 import styles from './categories.module.scss'
-import FormInputCategories from '../components/FormInputCategories/FormInputCategories'
-import CategoryTag from '../components/CategoryTag/CategoryTag'
 
 async function getCategoriesAndSub() {
     const res = await fetch(process.env.BASE_URL + '/api/getCategories', { next: { tags: ["deleteCategory", "postCategory"] } })
