@@ -8,35 +8,22 @@ import IconComponent from '@/components/Icon/Icon'
 import styles from './products.module.scss'
 import ProductPreview from '@/components/ProductPreview/ProductPreview'
 async function getCategoriesAndSub() {
-    try {
-        const res = await fetch(process.env.BASE_URL + '/api/getCategories', { next: { tags: ["deleteCategory", "postCategory"] } })
-        if (!res.ok) return []
-        return res.json()
-    } catch (error) {
-        console.log(error)
-    }
+    const res = await fetch(process.env.BASE_URL + '/api/getCategories', { next: { tags: ["deleteCategory", "postCategory"] } })
+    if (!res.ok) return []
+    return res.json()
 }
 async function getProducts() {
-    try {
-        const res = await fetch(process.env.BASE_URL + '/api/getProducts', { next: { tags: ["addProduct"] } })
-        if (!res.ok) return []
-        return res.json()
-    } catch (error) {
-        console.log(error)
-    }
+    const res = await fetch(process.env.BASE_URL + '/api/getProducts', { next: { tags: ["addProduct"] } })
+    if (!res.ok) return []
+    return res.json()
 }
 async function addProduct(data: ProductProp) {
     'use server'
-    try {
-        const res = await fetch(process.env.BASE_URL + '/api/addProduct', {
-            method: 'post',
-            body: JSON.stringify(data)
-        })
-        revalidateTag('addProduct')
-
-    } catch (error) {
-        console.log(error)
-    }
+    const res = await fetch(process.env.BASE_URL + '/api/addProduct', {
+        method: 'post',
+        body: JSON.stringify(data)
+    })
+    revalidateTag('addProduct')
 }
 async function ProductsPage() {
     const getDataCategories = await getCategoriesAndSub()
