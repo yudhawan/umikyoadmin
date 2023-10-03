@@ -24,7 +24,7 @@ const addCategoryAndSub = async ({ category, sub }: { category: string, sub: str
     })
     revalidateTag('postCategory')
 }
-export async function Categories() {
+export default async function Categories() {
     const data = await getCategoriesAndSub()
     return (
         <div className={styles.main}>
@@ -49,5 +49,3 @@ export async function Categories() {
         </div>
     )
 }
-
-export default Categories
