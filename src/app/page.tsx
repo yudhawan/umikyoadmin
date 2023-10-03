@@ -3,9 +3,13 @@ import ImageSlideContainer from '@/components/ImageSlideContainer/ImageSlideCont
 import styles from './page.module.scss'
 
 async function getImage(page: string) {
-  const res = await fetch(process.env.BASE_URL + '/api/getImagesByPage?page=' + page)
-  if (!res.ok) return []
-  return res.json()
+  try {
+    const res = await fetch(process.env.BASE_URL + '/api/getImagesByPage?page=' + page)
+    if (!res.ok) return []
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
 }
 async function postImage(url: string) {
   // 'use server'

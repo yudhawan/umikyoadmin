@@ -4,25 +4,39 @@ import CategoryTag from '@/components/CategoryTag/CategoryTag'
 import styles from './categories.module.scss'
 
 async function getCategoriesAndSub() {
-    const res = await fetch(process.env.BASE_URL + '/api/getCategories', { next: { tags: ["deleteCategory", "postCategory"] } })
-    if (!res.ok) return []
-    return res.json()
+    try {
+        const res = await fetch(process.env.BASE_URL + '/api/getCategories', { next: { tags: ["deleteCategory", "postCategory"] } })
+        if (!res.ok) return []
+        return res.json()
+    } catch (error) {
+        console.log(error)
+    }
 }
 async function deleteCategories(id: string, type: string) {
     'use server'
-    const res = await fetch(process.env.BASE_URL + '/api/deleteCategory', {
-        method: 'post',
-        body: JSON.stringify({ id, type })
-    })
-    revalidateTag('deleteCategory')
+    try {
+        const res = await fetch(process.env.BASE_URL + '/api/deleteCategory', {
+            method: 'post',
+            body: JSON.stringify({ id, type })
+        })
+        revalidateTag('deleteCategory')
+
+    } catch (error) {
+        console.log(error)
+    }
 }
 const addCategoryAndSub = async ({ category, sub }: { category: string, sub: string }) => {
     'use server'
-    const res = await fetch(process.env.BASE_URL + '/api/addCategory', {
-        method: 'post',
-        body: JSON.stringify({ category, sub }),
-    })
-    revalidateTag('postCategory')
+    try {
+        const res = await fetch(process.env.BASE_URL + '/api/addCategory', {
+            method: 'post',
+            body: JSON.stringify({ category, sub }),
+        })
+        revalidateTag('postCategory')
+
+    } catch (error) {
+        console.log(error)
+    }
 }
 export default async function Categories() {
     const data = await getCategoriesAndSub()

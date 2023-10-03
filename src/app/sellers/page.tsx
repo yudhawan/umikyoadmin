@@ -8,9 +8,13 @@ type GetSellerProp = {
     page: number
 }
 async function getSellers({ search, page }: GetSellerProp) {
-    const res = await fetch(process.env.BASE_URL + '/api/getSellers?page=' + page + '&search=' + search, { next: { tags: ["deleteSeller", "sellerActiveAndDeactive"] } })
-    if (!res.ok) return []
-    return res.json()
+    try {
+        const res = await fetch(process.env.BASE_URL + '/api/getSellers?page=' + page + '&search=' + search, { next: { tags: ["deleteSeller", "sellerActiveAndDeactive"] } })
+        if (!res.ok) return []
+        return res.json()
+    } catch (error) {
+        console.log(error)
+    }
 }
 async function Sellers() {
     const page = 1
