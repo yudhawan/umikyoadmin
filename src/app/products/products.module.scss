@@ -2,9 +2,26 @@
 
 .main{
   @include containerDefault;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 20px;
+  height: unset;
+  @media only screen and (max-width: $tablet){
+    flex-direction: column
+  }
 }
 .title{
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 500;
-  color: $black;
+  margin: 0;
 }
+.productsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap:16px;
+  @media only screen and (max-width: $tablet){
+    gap:8px;
+  }
+}
+
+

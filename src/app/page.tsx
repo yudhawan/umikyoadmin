@@ -1,21 +1,24 @@
-import Image from 'next/image'
-import styles from './page.module.scss'
 import FormInputImage from '@/components/FormInputImage/FormInputImage'
+import ImageSlideContainer from '@/components/ImageSlideContainer/ImageSlideContainer'
+import styles from './page.module.scss'
 
-async function getImage(url: string) {
-
+async function getImage(page: string) {
+  const res = await fetch(process.env.BASE_URL + '/api/getImagesByPage?page=' + page)
+  if (!res.ok) return []
+  return res.json()
 }
 async function postImage(url: string) {
   // 'use server'
 }
-export default function Home() {
+export default async function Home() {
+  const homeBanners = await getImage('home')
   return (
     <main className={styles.main}>
       <span className={styles.title}>Banners</span>
       <FormInputImage />
       <div className={styles.bannerShowContainer}>
         <span>Homepage</span>
-        <div className={styles.imageContainer}></div>
+        <ImageSlideContainer images={homeBanners} />
       </div>
       <div className={styles.bannerShowContainer}>
         <span>Sellers</span>

@@ -1,0 +1,20 @@
+@import '../../constants.module.scss';
+
+.table,.td,.th{
+    border: 1px solid $white;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.td{
+  padding: 4px 8px;
+}
+.th{
+  padding: 6px 8px;
+}
+.wa{
+  background-color: $green;
+  padding: 2px 6px;
+  border-radius: 8px;
+}

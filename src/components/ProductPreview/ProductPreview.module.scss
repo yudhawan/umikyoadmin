@@ -1,0 +1,40 @@
+@import '../../constants.module.scss';
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    border: 1px solid $purple;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: $lilac;
+    width: 300px;
+  }
+.infoProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.image{
+    width: 50px;
+    height: 50px;
+}
+.productName{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.deleteButton{
+    background-color: $red;
+    border: none;
+    width: 90px;
+    height: 20px;
+    border-radius: 8px;
+  }
+.deleteButton:hover{
+    background-color: red;
+}
+.price{
+    font-size: 24px;
+}

@@ -1,0 +1,21 @@
+@import '../../constants.module.scss';
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+}
+.input{
+    height: 30px;
+}
+.submit{
+    background-color: greenyellow;
+    color: $black;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 4px 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+@import '../../constants.module.scss';
+
+.main{
+    margin-top: 36px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.page{
+    font-size: 20px;
+}
+.page:hover{
+    color: $purple-4;
+    font-weight: 600;
+    cursor: pointer;
+}
+.pageActive{
+    color: $purple-4;
+    border-radius: 4px;
+    padding-inline: 3px;
+}

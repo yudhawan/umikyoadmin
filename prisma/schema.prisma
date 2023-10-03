@@ -47,7 +47,7 @@ model Products {
   quantity     Int
   price        Int
   category     String
-  sub          String
+  sub          String?
   images       String?
   description  String
 }
@@ -55,6 +55,11 @@ model Products {
 model Categories {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   category String
+}
+
+model SubCategory {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+  sub String
 }
 
 model Banners {

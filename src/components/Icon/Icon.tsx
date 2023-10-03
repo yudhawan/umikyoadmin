@@ -1,5 +1,5 @@
+'use client'
 import SVG from 'react-inlinesvg'
-import React from 'react'
 export type IconProps = {
     source: { src: string },
     title?: string,

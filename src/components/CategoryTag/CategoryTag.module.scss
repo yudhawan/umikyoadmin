@@ -1,0 +1,25 @@
+@import '../../constants.module.scss';
+.tag{
+    background-color: $purple;
+    border-radius: 10px;
+    padding: 2px 0px 2px 6px;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+  }
+.tag:hover{
+    .icon{
+        stroke: red;
+    }
+}
+.removeButton{
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    stroke-width: 3px;
+}

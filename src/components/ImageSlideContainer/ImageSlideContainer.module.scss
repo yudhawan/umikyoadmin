@@ -1,0 +1,13 @@
+@import '../../constants.module.scss';
+
+.imageContainer{
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    width: 70dvw;
+    height: 200px;
+    img{
+        width: 300px;
+        height: 100%;
+    }
+}
