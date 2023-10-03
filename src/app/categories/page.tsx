@@ -9,20 +9,20 @@ async function getCategoriesAndSub() {
     return res.json()
 }
 async function deleteCategories(id: string, type: string) {
-    // 'use server'
-    // const res = await fetch(process.env.BASE_URL + '/api/deleteCategory', {
-    //     method: 'post',
-    //     body: JSON.stringify({ id, type })
-    // })
-    // revalidateTag('deleteCategory')
+    'use server'
+    const res = await fetch(process.env.BASE_URL + '/api/deleteCategory', {
+        method: 'post',
+        body: JSON.stringify({ id, type })
+    })
+    revalidateTag('deleteCategory')
 }
 const addCategoryAndSub = async ({ category, sub }: { category: string, sub: string }) => {
-    // 'use server'
-    // const res = await fetch(process.env.BASE_URL + '/api/addCategory', {
-    //     method: 'post',
-    //     body: JSON.stringify({ category, sub }),
-    // })
-    // revalidateTag('postCategory')
+    'use server'
+    const res = await fetch(process.env.BASE_URL + '/api/addCategory', {
+        method: 'post',
+        body: JSON.stringify({ category, sub }),
+    })
+    revalidateTag('postCategory')
 }
 export async function Categories() {
     const data = await getCategoriesAndSub()
