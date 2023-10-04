@@ -48,7 +48,7 @@ export default async function Categories() {
                 <h1 className={styles.title}>Categories</h1>
                 <div className={styles.tagContainer}>
                     {
-                        data?.categories.length ? data?.categories?.map((val: { id: string, category: string }) => <CategoryTag key={val.id} id={val.id} category={val.category} deleteFn={deleteCategories} type='category' />) : <>empty</>
+                        data?.categories?.length ? data?.categories?.map((val: { id: string, category: string }) => <CategoryTag key={val.id} id={val.id} category={val.category} deleteFn={deleteCategories} type='category' />) : <>empty</>
                     }
                 </div>
             </div>
@@ -56,7 +56,7 @@ export default async function Categories() {
                 <h1 className={styles.title}>Sub Categories</h1>
                 <div className={styles.tagContainer}>
                     {
-                        data?.sub.length ? data?.sub?.map((val: { id: string, sub: string }) => <CategoryTag key={val.id} id={val.id} category={val.sub} type='sub' deleteFn={deleteCategories} />) : <>empty</>
+                        data?.sub?.length ? data?.sub?.map((val: { id: string, sub: string }) => <CategoryTag key={val.id} id={val.id} category={val.sub} type='sub' deleteFn={deleteCategories} />) : <>empty</>
                     }
                 </div>
             </div>
