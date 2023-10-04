@@ -40,11 +40,10 @@ const addCategoryAndSub = async ({ category, sub }: { category: string, sub: str
 }
 export default async function Categories() {
     const data = await getCategoriesAndSub()
-    const a = await process.env.BASE_URL
     return (
         <div className={styles.main}>
             <h1 className={styles.title}>Add Categories/Sub</h1>
-            <FormInputCategories addCategoryAndSub={addCategoryAndSub} a={a} />
+            <FormInputCategories addCategoryAndSub={addCategoryAndSub} />
             <div className={styles.container}>
                 <h1 className={styles.title}>Categories</h1>
                 <div className={styles.tagContainer}>
