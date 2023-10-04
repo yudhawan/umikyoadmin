@@ -19,6 +19,6 @@ export const GET = async (request: NextRequest) => {
         const test = await prisma.categories.findMany()
         return NextResponse.json({ categories: test }, { status: 202 })
     } catch (error) {
-        return NextResponse.json({ message: "POST error: ", error }, { status: 500 })
+        return NextResponse.json({ message: "Get error: ", error }, { status: 500 })
     }
 }
