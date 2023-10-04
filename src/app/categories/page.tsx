@@ -43,7 +43,7 @@ export default async function Categories() {
     return (
         <div className={styles.main}>
             <h1 className={styles.title}>Add Categories/Sub</h1>
-            <FormInputCategories addCategoryAndSub={addCategoryAndSub} />
+            <FormInputCategories addCategoryAndSub={addCategoryAndSub} data={data} />
             <div className={styles.container}>
                 <h1 className={styles.title}>Categories</h1>
                 <div className={styles.tagContainer}>
