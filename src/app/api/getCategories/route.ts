@@ -5,7 +5,6 @@ export const GET = async (request: NextRequest) => {
     try {
         const categories = await prisma.categories.findMany()
         const sub = await prisma.subCategory.findMany()
-        console.log(categories)
         return NextResponse.json({ categories, sub })
     } catch (error) {
         return NextResponse.json({ message: "Cannot find categories" }, { status: 500 })

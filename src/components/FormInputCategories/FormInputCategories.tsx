@@ -2,9 +2,9 @@
 import React from 'react'
 import styles from './FormInputCategories.module.scss'
 import { useForm } from 'react-hook-form'
-function FormInputCategories({ addCategoryAndSub, data }: any) {
+function FormInputCategories({ addCategoryAndSub }: any) {
     const { register, getValues, reset } = useForm()
-    console.log(data)
+
     return (
         <form className={styles.formInput}>
             <input className={styles.input} type='text' {...register('category')} placeholder='Category' />
