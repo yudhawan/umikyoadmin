@@ -3,6 +3,7 @@ const allowOrigin = process.env.NODE_ENV === 'production' ? [process.env.BASE_UR
 export function middleware(request: Request) {
     const res = NextResponse.next()
     const origin = request.headers.get('origin')
+    console.log(origin, allowOrigin)
     if (origin && !allowOrigin.includes(origin)) return new NextResponse(null, {
         status: 400,
         headers: {
