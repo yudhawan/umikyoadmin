@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-const allowOrigin = process.env.NODE_ENV === 'production' ? [process.env.BASE_URL, 'https://umikyo.vercel.app/'] : ['http://localhost:3000']
+const allowOrigin = process.env.NODE_ENV === 'production' ? [process.env.BASE_URL, 'https://umikyo.vercel.app'] : ['http://localhost:3000']
 export function middleware(request: Request) {
     const res = NextResponse.next()
-    const origin = request.headers.get('origin')
-    console.log(origin, allowOrigin)
+    const origin = request.headers.get('origin') || ''
+    console.log(origin, allowOrigin, allowOrigin.includes(origin))
     if (origin && !allowOrigin.includes(origin)) return new NextResponse(null, {
         status: 400,
         headers: {
